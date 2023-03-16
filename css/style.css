@@ -11,6 +11,9 @@ body {
 label {
   margin-bottom: 0;
 }
+img{
+  object-fit: cover;
+}
 table {
   border-collapse: collapse;
 }

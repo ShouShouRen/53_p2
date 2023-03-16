@@ -1,6 +1,6 @@
-<?php 
-  require_once("pdo.php");
-  session_start();
+<?php
+    require_once("pdo.php");
+    session_start();
 ?>
 <!DOCTYPE html>
 <html lang="zh-Hant-TW">
@@ -11,7 +11,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="./css/bootstrap.min.css">
   <link rel="stylesheet" href="./css/style.css">
-  <title>咖啡商品展示系統</title>
+  <title>建立商品</title>
 </head>
 
 <body>
@@ -34,34 +34,34 @@
     </div>
   </nav>
   <div class="container py-3" style="margin-top: 86px;">
-    <div class="row py-3">
-      <h5 class="border-start text-light font-weight-bolder">上架管理</h5>
+    <div class="row justify-content-between align-items-center py-3">
+      <h5 class="border-start text-light">上架管理</h5>
     </div>
-    <div class="row justify-content-between align-items-center">
-      <div class="col-12 bg-white p-3 shadow-lg rounded-lg" style="min-height: 780px;">
+    <div class="row">
+      <div class="col-12 bg-white p-3 shadow-lg rounded-lg" style="min-height: 780px">
         <ul class="nav nav-tabs" id="tab">
           <li class="nav-item">
-            <a href="#chose" id="chose-tab" class="nav-link active" data-toggle="tab">選擇版型</a>
+            <a href="#chose" class="nav-link active" id="chose-tab" data-toggle="tab">選擇版醒</a>
           </li>
           <li class="nav-item">
-            <a href="#input" id="input-tab" class="nav-link" data-toggle="tab">填寫資料</a>
+            <a href="#input" class="nav-link" id="input-tab" data-toggle="tab">填寫資料</a>
           </li>
           <li class="nav-item">
-            <a href="#preview" id="preview-tab" class="nav-link" data-toggle="tab">商品預覽</a>
+            <a href="#preview" class="nav-link" id="preview-tab" data-toggle="tab">商品預覽</a>
           </li>
           <li class="nav-item">
-            <a href="#submit" id="submit-tab" class="nav-link" data-toggle="tab">確認送出</a>
+            <a href="#submit" class="nav-link" id="submit-tab" data-toggle="tab">確認送出</a>
           </li>
         </ul>
-        <form action="store_product.php" method="POST" enctype="multipart/form-data">
+        <form action="store_product.php" method="post" enctype="multipart/form-data">
           <div class="tab-content" id="tabcontent">
             <div class="tab-pane fade show active" id="chose">
               <div class="container my-3">
                 <div class="text-right">
-                  <button type="button" class="btn btn-secondary">新增版型</button>
+                  <button class="btn btn-secondary" type="button">新增版型</button>
                 </div>
                 <div class="row pt-2">
-                  <div class="d-flex col-6 h-380">
+                  <div class="col-6 d-flex" style="height:380px">
                     <div class="col-6 h-100 bg-back p-3 text-center text-light">
                       <div class="bg-1 w-100 h-75 d-flex justify-content-center align-items-center">
                         <p>圖片</p>
@@ -75,10 +75,10 @@
                       <div class="bg-1 w-100 h-20 mt-1 py-3">費用</div>
                     </div>
                   </div>
-                  <div class="d-flex col-6 h-380">
+                  <div class="col-6 d-flex" style="height:380px">
                     <div class="col-6 h-100 bg-back p-3 text-center text-light">
                       <div class="bg-1 w-100 h-20 mb-1 py-3">商品名稱</div>
-                      <div class="bg-1 w-100 h-75 d-flex justify-content-center align-items-center">
+                      <div class="bg-2 w-100 h-75 d-flex justify-content-center align-items-center">
                         <p>圖片</p>
                       </div>
                     </div>
@@ -86,7 +86,7 @@
                       <div class="bg-1 w-100 h-20 mt-1 py-3">費用</div>
                       <div class="bg-2 w-100 h-30 mt-1 py-4">商品簡介</div>
                       <div class="bg-3 w-100 h-20 mt-1 py-3">發布日期</div>
-                      <div class="bg-2 w-100 h-20 mt-1 py-3">相關連結</div>
+                      <div class="bg-1 w-100 h-20 mt-1 py-3">相關連結</div>
                     </div>
                   </div>
                 </div>
@@ -101,32 +101,32 @@
                   </div>
                 </div>
                 <div class="row pt-2">
-                  <div class="d-flex col-6 h-380">
+                  <div class="col-6 d-flex" style="height:380px">
                     <div class="col-6 h-100 bg-back p-3 text-center text-light">
-                      <div class="bg-1 w-100 h-20 mb-1 py-3">商品名稱</div>
+                      <div class="bg-1 w-100 h-20 mt-1 py-3">商品名稱</div>
+                      <div class="bg-2 w-100 h-30 mt-1 py-4">商品簡介</div>
+                      <div class="bg-3 w-100 h-20 mt-1 py-3">發布日期</div>
+                      <div class="bg-1 w-100 h-20 mt-1 py-3">費用</div>
+                    </div>
+                    <div class="col-6 h-100 bg-back p-3 text-center text-light">
                       <div class="bg-1 w-100 h-75 d-flex justify-content-center align-items-center">
                         <p>圖片</p>
                       </div>
-                    </div>
-                    <div class="col-6 h-100 bg-back p-3 text-center text-light">
-                      <div class="bg-1 w-100 h-20 mt-1 py-3">費用</div>
-                      <div class="bg-2 w-100 h-30 mt-1 py-4">商品簡介</div>
-                      <div class="bg-3 w-100 h-20 mt-1 py-3">發布日期</div>
                       <div class="bg-2 w-100 h-20 mt-1 py-3">相關連結</div>
                     </div>
                   </div>
-                  <div class="d-flex col-6 h-380">
+                  <div class="col-6 d-flex" style="height:380px">
                     <div class="col-6 h-100 bg-back p-3 text-center text-light">
+                      <div class="bg-1 w-100 h-20 mt-1 py-3">費用</div>
+                      <div class="bg-2 w-100 h-30 mt-1 py-4">商品簡介</div>
+                      <div class="bg-3 w-100 h-20 mt-1 py-3">發布日期</div>
+                      <div class="bg-1 w-100 h-20 mt-1 py-3">商品名稱</div>
+                    </div>
+                    <div class="col-6 h-100 bg-back p-3 text-center text-light">
+                      <div class="bg-2 w-100 h-20 mb-1 py-3">相關連結</div>
                       <div class="bg-1 w-100 h-75 d-flex justify-content-center align-items-center">
                         <p>圖片</p>
                       </div>
-                      <div class="bg-2 w-100 h-20 mt-1 py-3">相關連結</div>
-                    </div>
-                    <div class="col-6 h-100 bg-back p-3 text-center text-light">
-                      <div class="bg-1 w-100 h-20 mb-1 py-3">商品名稱</div>
-                      <div class="bg-2 w-100 h-30 mt-1 py-4">商品簡介</div>
-                      <div class="bg-3 w-100 h-20 mt-1 py-3">發布日期</div>
-                      <div class="bg-1 w-100 h-20 mt-1 py-3">費用</div>
                     </div>
                   </div>
                 </div>
@@ -142,39 +142,45 @@
                 </div>
               </div>
             </div>
-            <div class="tab-pane fade show" id="input">
+            <div class="tab-pane fade" id="input">
               <div class="d-flex justify-content-center">
                 <div class="col-8">
-                  <h4 class="text-center my-5">填寫資料</h4>
-                  <div class="d-flex justify-content-between align-items-center">
-                    <label for="">商品標題:</label>
-                    <input type="text" class="form-control w-75 my-3" name="product_name">
-                  </div>
-                  <div class="d-flex justify-content-between align-items-center">
-                    <label for="">商品描述:</label>
-                    <input type="text" class="form-control w-75 my-3" name="product_des">
-                  </div>
-                  <div class="d-flex justify-content-between align-items-center">
-                    <label for="">發布日期:</label>
-                    <input type="datetime-local" class="form-control w-75 my-3" name="time" value="<?=$now;?>">
-                  </div>
-                  <div class="d-flex align-items-center justify-content-between my-3">
-                    <label for="">費用:</label>
-                    <input type="text" class="form-control w-75" name="price">
-                  </div>
-                  <div class="d-flex justify-content-between align-items-center">
-                    <label for="">相關連結:</label>
-                    <input type="text" class="form-control w-75" name="links">
+                  <div class="bg-white p-4 rounded-lg">
+                    <h4 class="text-center my-5">填寫資料</h4>
+                    <div class="d-flex align-items-center justify-content-between my-3">
+                      <label for="">商品標題:</label>
+                      <input type="text" class="form-control w-75" name="product_name">
+                    </div>
+                    <div class="d-flex align-items-center justify-content-between my-3">
+                      <label for="">商品描述:</label>
+                      <textarea name="product_des" class="form-control w-75"></textarea>
+                    </div>
+                    <div class="d-flex align-items-center justify-content-between my-3">
+                      <label for="">發布日期:</label>
+                      <input type="datetime-local" class="form-control w-75" name="time" value="<?=$now;?>">
+                    </div>
+                    <div class="d-flex align-items-center justify-content-between my-3">
+                      <label for="">圖片:</label>
+                      <input type="file" name="images">
+                    </div>
+                    <div class="d-flex align-items-center justify-content-between my-3">
+                      <label for="">費用:</label>
+                      <input type="text" class="form-control w-75" name="price">
+                    </div>
+                    <div class="d-flex align-items-center justify-content-between my-3">
+                      <label for="">相關連結:</label>
+                      <input type="text" class="form-control w-75" name="links">
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
-            <div class="tab-pane fade show" id="preview">
+            <div class="tab-pane fade" id="preview">
 
             </div>
-            <div class="tab-pane fade show" id="submit">
-              <div class="d-center">
-                <button type="submit" class="btn btn-outline-success">確認送出</button>
+            <div class="tab-pane fade" id="submit">
+              <div class="d-flex justify-content-center align-items-center" style="height:708px">
+                <button class="btn btn-primary" type="submit">確認送出</button>
               </div>
             </div>
           </div>
