@@ -88,35 +88,28 @@ $(function () {
         $("#product_des").val(response[0].product_des);
         $("#price").val(response[0].price);
         $("#links").val(response[0].links);
-
-           // 將圖片顯示回來
-           let imagePath = "./images/" + response[0].images;
-           $("#current-image").attr("src", imagePath);
+        let imagePath = "./images/" + response[0].images;
+        $("#current-image").attr("src", imagePath);
       },
     });
   });
-  $("#save-product").click(function () {
-    let product_name = $("#product_name").val();
-    let product_des = $("#product_des").val();
-    let time = $("#time").val();
-    let price = $("#price").val();
-    let links = $("#links").val();
-    let id = $("#id").val();
-
-    let data = {
-      product_name: product_name,
-      product_des: product_des,
-      time: time,
-      price: price,
-      links: links,
-      id: id,
-    };
-
+  $("#save-product").click(function (e) {
+    e.preventDefault();
+    let formData = new FormData();
+    formData.append("id", $("#id").val());
+    formData.append("product_name", $("#product_name").val());
+    formData.append("product_des", $("#product_des").val());
+    formData.append("price", $("#price").val());
+    formData.append("links", $("#links").val());
+    console.log($("#images")[0]);
+    formData.append("images", $("#images")[0].files[0]);
+    
     $.ajax({
       url: "update_product.php",
       type: "POST",
-      data: JSON.stringify(data),
-      contentType: "application/json",
+      data: formData,
+      processData: false,
+      contentType: false,
       success: function (response) {
         console.log("Success: " + response);
         // alert("儲存成功");

@@ -141,7 +141,7 @@
         </div>
       </div>
       <?php }elseif($row["template"] == 4) {?>
-      <div class="d-flex col-6 h-380 py-2">
+      <div class="d-flex h-380 py-2">
         <div class="d-flex text-center bg-back px-2 py-3 flex-wrap">
           <div class="col-6">
             <div class="bg-1 w-100 h-20 mt-1 py-3 text-center text-light">
@@ -198,8 +198,7 @@
                   <img id="current-image" class="w-25" src="" alt="">
                 </div>
                 <div class="d-flex align-items-center justify-content-between my-3">
-                  <label for="">圖片:</label>
-                  <input type="hidden" name="images" id="images">
+                  <label for="">上傳圖片:</label>
                   <input type="file" name="images" id="images">
                 </div>
                 <div class="d-flex align-items-center justify-content-between my-3">
