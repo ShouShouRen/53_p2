@@ -20,32 +20,6 @@
   <link rel="stylesheet" href="./css/bootstrap.min.css">
   <link rel="stylesheet" href="./css/style.css">
   <title>咖啡商品展示系統</title>
-  <style>
-  .product-card__links {
-    background-color: #eee;
-  }
-
-  .product-card__title {
-    background-color: #ddd;
-  }
-
-  .product-card__description {
-    background-color: #eee;
-  }
-
-  .product-card__time {
-    background-color: #ccc;
-    font-size: 15px;
-  }
-
-  .product-card__price {
-    background-color: #ddd;
-  }
-
-  .product-card__button {
-    margin-top: 1.5rem;
-  }
-  </style>
 </head>
 
 <body>
