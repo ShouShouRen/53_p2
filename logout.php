@@ -1,6 +1,10 @@
 <?php
     require_once("pdo.php");
     session_start();
+    if (!isset($_SESSION["AUTH"])) {
+        header("Location: login.php");
+        exit;
+    }
     extract($_GET);
     $user = $_SESSION["AUTH"]["user"];    
     $status = "登出成功";
