@@ -154,7 +154,7 @@
               商品名稱:<?= $row["product_name"]; ?></div>
           </div>
           <div class="col-6">
-            <div class="bg-2 w-100 h-20 mt-1 py-3 text-center text-light">相關連結:<a
+            <div class="bg-2 w-100 h-20 mb-1 py-3 text-center text-light">相關連結:<a
                 href="<?= $row["links"]; ?>"><?= $row["links"]; ?></a></div>
             <img src="./images/<?= $row["images"]; ?>" class="w-100" style="height: 225px" alt="">
           </div>
@@ -169,6 +169,47 @@
       </div>
       <?php } ?>
       <?php } ?>
+      <div class="modal fade" id="edit-product" tabindex="-1" aria-labelledby="edit-productLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="edit-productLabel">修改商品內容</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <form enctype="multipart/form-data">
+                <div class="d-flex align-items-center justify-content-between my-3">
+                  <label for="">商品標題:</label>
+                  <input type="text" class="form-control w-75" name="product_name" id="product_name">
+                </div>
+                <div class="d-flex align-items-center justify-content-between my-3">
+                  <label for="">商品描述:</label>
+                  <textarea class="form-control w-75" name="product_des" id="product_des"></textarea>
+                </div>
+                <div class="d-flex align-items-center justify-content-between my-3">
+                  <label for="">發布日期:</label>
+                  <input type="datetime-local" class="form-control w-75" name="time" id="time"
+                    value="<?=$now?>">
+                </div>
+                <div class="d-flex align-items-center justify-content-between my-3">
+                  <label for="">費用:</label>
+                  <input type="text" class="form-control w-75" id="price" name="price">
+                </div>
+                <div class="d-flex align-items-center justify-content-between my-3">
+                  <label for="">相關連結:</label>
+                  <input type="text" class="form-control w-75" id="links" name="links">
+                </div>
+                <div class="text-right my-3">
+                  <input type="submit" class="btn btn-primary" id="save-product" value="儲存">
+                </div>
+                <input type="hidden" name="id" id="id">
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </body>

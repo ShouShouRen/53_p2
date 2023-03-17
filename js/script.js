@@ -72,6 +72,55 @@ $(function () {
     });
   });
 
+  $(".edit-product").click(function () {
+    let product_id = $(this).data("id");
+    $.ajax({
+      url: "get_product.php",
+      type: "get",
+      data: {
+        id: product_id,
+      },
+      dataType: "json",
+      success: function (response) {
+        console.log(response);
+        $("#id").val(response[0].id);
+        $("#product_name").val(response[0].product_name);
+        $("#product_des").val(response[0].product_des);
+        // $("#img").attr("src", "./images/" + response[0].images);
+        $("#price").val(response[0].price);
+        $("#links").val(response[0].links);
+      },
+    });
+  });
+  $("#save-product").click(function () {
+    let product_name = $("#product_name").val();
+    let product_des = $("#product_des").val();
+    let time = $("#time").val();
+    let price = $("#price").val();
+    let links = $("#links").val();
+    let id = $("#id").val();
+
+    let data = {
+      product_name: product_name,
+      product_des: product_des,
+      time: time,
+      price: price,
+      links: links,
+      id: id,
+    };
+
+    $.ajax({
+      url: "update_product.php",
+      type: "POST",
+      data: JSON.stringify(data),
+      contentType: "application/json",
+      success: function (response) {
+        console.log("Success: " + response);
+        // alert("儲存成功");
+        // window.location.reload();
+      },
+    });
+  });
   // $("#search-member").submit(function (e) {
   //   e.preventDefault();
   //   let search = $("#search-input").val();
