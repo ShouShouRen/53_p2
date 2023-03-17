@@ -120,13 +120,13 @@ $(function () {
   $("#search-member").submit(function (e) {
     e.preventDefault();
     let search = $("#search-input").val();
-    let use = $('input[name="use"]:checked').val(); // 獲取用戶的選擇
+    let use = $('input[name="use"]:checked').val();
     $.ajax({
       url: "search_member.php",
       type: "post",
       data: {
         search: search,
-        use: use, // 將用戶的選擇發送給 PHP 程序
+        use: use,
       },
       success: function (response) {
         console.log(response);
@@ -135,7 +135,7 @@ $(function () {
       },
     });
   });
-  
+
   $("#search-product").submit(function (event) {
     event.preventDefault();
     let search = $("#search-input").val();
@@ -154,7 +154,10 @@ $(function () {
         console.log(response);
         let search_res = $("#search-results");
         search_res.html(response);
-        if (search_res.children().length == 0) {
+        if (search_res.children().length == 1) {
+          search_res.children().addClass("col-12");
+          search_res.children().removeClass("col-6");
+        } else if (search_res.children().length == 0) {
           search_res.append(
             "<div class='d-center text-center text-white h1'>查無資料</div>"
           );

@@ -34,7 +34,7 @@ if (isset($_POST['search'])) {
         foreach ($filtered_result as $row) {
             if ($row["template"] == 1) {
                 $html .= '
-                <div class="col-6 h-380">
+                <div class="col-6 h-380" style="width: 585px">
                   <div class="d-flex text-center bg-back px-2 py-3 flex-wrap">
                     <div class="col-6">
                       <img src="./images/' . $row["images"] . '" class="w-100" style="height: 225px" alt="">
@@ -50,7 +50,7 @@ if (isset($_POST['search'])) {
                 </div>';
             } else if ($row["template"] == 2) {
                 $html .= '
-                <div class="col-6 h-380">
+                <div class="col-6 h-380" style="width: 585px">
                   <div class="d-flex text-center bg-back px-2 py-3 flex-wrap">
                     <div class="col-6">
                       <div class="bg-1 w-100 h-20 mb-1 py-3 text-center text-light">商品名稱:' . $row["product_name"] . '</div>
@@ -66,7 +66,7 @@ if (isset($_POST['search'])) {
                 </div>';
             } else if ($row["template"] == 3) {
                 $html .= '
-                <div class="col-6 h-380">
+                <div class="col-6 h-380" style="width: 585px">
                   <div class="d-flex text-center bg-back px-2 py-3 flex-wrap">
                       <div class="col-6">
                           <div class="bg-1 w-100 h-20 mt-1 py-3 text-center text-light">商品名稱:' . $row["product_name"] . '</div>
@@ -82,7 +82,7 @@ if (isset($_POST['search'])) {
                 </div>';
             } else if ($row["template"] == 4) {
                 $html .= '
-                <div class="col-6 h-380">
+                <div class="col-6 h-380" style="width: 585px">
                   <div class="d-flex text-center bg-back px-2 py-3 flex-wrap">
                       <div class="col-6">
                           <div class="bg-1 w-100 h-20 mt-1 py-3 text-center text-light">費用:' . $row["price"] . '元</div>
