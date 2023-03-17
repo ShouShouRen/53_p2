@@ -4,9 +4,8 @@ require_once("pdo.php");
 
 $sql = "SELECT * FROM users";
 
-$use = $_POST['use']; // 獲取用戶的選擇
+$use = $_POST['use'];
 
-// 根據用戶的選擇進行排序
 if ($use == 'up') {
   $sql .= " ORDER BY user_id ASC";
 } else {
@@ -16,8 +15,6 @@ if ($use == 'up') {
 $stmt = $pdo->prepare($sql);
 $stmt->execute();
 $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
-
-// 以下代碼與原代碼相同，用於過濾搜索結果並生成 HTML
 if (isset($_POST['search'])) {
   $keyword = $_POST['search'];
   $filtered_result = array();
@@ -33,17 +30,38 @@ if (isset($_POST['search'])) {
     }
     $html = "";
     foreach ($filtered_result as $row) {
-      $html .= '
-        <div class="col-6 h-380">
-          <div class="d-flex text-center bg-back px-2 py-3 flex-wrap">
-            <div class="col-12">
-              <div class="bg-1 w-100 h-20 mt-1 py-3 text-center text-light">
-                使用者名稱:' . $row["user_name"] . '</div>
-              <div class="bg-2 w-100 h-20 mt-1 py-3 text-center text-light">
-                使用者 ID:' . $row["user_id"] . '</div>
-            </div>
-          </div>
-        </div>';
+      $html .= '<tr>
+          <td>' . $row["user_id"] . '</td>
+          <td>' . $row["user"] . '</td>
+          <td>' . $row["pw"] . '</td>
+          <td>' . $row["user_name"] . '</td>
+          <td>';
+      switch ($row["role"]) {
+          case 0:
+              $html .= "管理員";
+              break;
+          case 1:
+              $html .= "一般使用者";
+              break;
+      }
+      $html .= '</td>
+          <td>';
+      if ($row["id"] == 1) {
+          $html .= '<!-- 隱藏切換權限的連結 -->';
+      } elseif ($row["id"] == $_SESSION["AUTH"]["id"]) {
+          $html .= '<span class="text-secondary">切換權限</span>';
+      } else {
+          $html .= '<a class="btn btn-outline-secondary" href="switch_role.php?role=' . $row["role"] . '&id=' . $row["id"] . '">權限修改</a>';
+      }
+      if ($row["id"] == 1) {
+          $html .= '<!-- 隱藏修改的連結 -->';
+      } else {
+          $html .= '<button class="btn btn-outline-secondary btn-edit" data-id="' . $row["id"] . '" data-toggle="modal" data-target="#edit">修改</button>';
+          $html .= '<a class="btn btn-outline-danger" href="delete_member.php?id=' . $row["id"] . '" onclick="return confirm(\'確定要刪除?\')">刪除</a>';
+          $html .= '<div class="modal fade" id="edit" tabindex="-1" aria-labelledby="editLabel" aria-hidden="true"></div>';
+      }
+      $html .= '</td>
+      </tr>';
     }
     echo $html;
   }
