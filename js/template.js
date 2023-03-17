@@ -70,18 +70,16 @@ const template4HTML = `
     </div>
 </div>
 `;
-
 const gettemplates = [
   { el: template1, html: template1HTML },
   { el: template2, html: template2HTML },
   { el: template3, html: template3HTML },
   { el: template4, html: template4HTML },
 ];
-
 gettemplates.forEach((gettemplate) => {
-  gettemplate.el.addEventListener("change", () => {
+  gettemplate.el.on("change", () => {
     if (gettemplate.el.checked) {
-      preview.innerHTML = gettemplate.html;
+      preview.html(gettemplate.html);
     }
   });
 });
@@ -93,21 +91,19 @@ const images = $('input[name="images"]');
 const price = $('input[name="price"]');
 const links = $('input[name="links"]');
 const previewtab = $("#preview-tab");
-
 const templates = [
-  { element: template1, html: template1HTML },
-  { element: template2, html: template2HTML },
-  { element: template3, html: template3HTML },
-  { element: template4, html: template4HTML },
+  { el: template1, html: template1HTML },
+  { el: template2, html: template2HTML },
+  { el: template3, html: template3HTML },
+  { el: template4, html: template4HTML },
 ];
-
 previewtab.addEventListener("click", (e) => {
   e.preventDefault();
   const file = images.files[0];
   const reader = new FileReader();
   reader.onload = () => {
     templates.forEach((template) => {
-      if (template.element.checked) {
+      if (template.el.checked) {
         const previewHTML = template.html
           .replace("商品名稱", "商品名稱：" + product_name.value)
           .replace("商品簡介", "商品簡介:" + product_des.value)
