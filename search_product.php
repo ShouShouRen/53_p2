@@ -37,7 +37,7 @@ if (isset($_POST['search'])) {
                 <div class="col-6 h-380">
                   <div class="d-flex text-center bg-back px-2 py-3 flex-wrap">
                     <div class="col-6">
-                      <img src="./images/' . $row["images"] . '" class="w-100 h-75" alt="">
+                      <img src="./images/' . $row["images"] . '" class="w-100" style="height: 225px" alt="">
                       <div class="bg-2 w-100 h-20 mt-1 py-3 text-center text-light">相關連結:<a href="' . $row["links"] . '">' . $row["links"] . '</a></div>
                     </div>
                     <div class="col-6">
@@ -54,7 +54,7 @@ if (isset($_POST['search'])) {
                   <div class="d-flex text-center bg-back px-2 py-3 flex-wrap">
                     <div class="col-6">
                       <div class="bg-1 w-100 h-20 mb-1 py-3 text-center text-light">商品名稱:' . $row["product_name"] . '</div>
-                      <img src="./images/' . $row["images"] . '" class="w-100 h-75" alt="">
+                      <img src="./images/' . $row["images"] . '" class="w-100" style="height: 225px" alt="">
                     </div>
                     <div class="col-6">
                       <div class="bg-1 w-100 h-20 mt-1 py-3 text-center text-light">費用:' . $row["price"] . ' 元</div>
@@ -75,7 +75,7 @@ if (isset($_POST['search'])) {
                           <div class="bg-1 w-100 h-20 mt-1 py-3 text-center text-light">費用:' . $row["price"] . '元</div>
                       </div>
                       <div class="col-6">
-                          <img src="./images/' . $row["images"] . '" class="w-100 h-75" alt="">
+                          <img src="./images/' . $row["images"] . '" class="w-100" style="height: 225px" alt="">
                           <div class="bg-1 w-100 h-20 mt-1 py-3 text-center text-light">相關連結:<a href="' . $row["links"] . '">' . $row["links"] . '</a></div>
                       </div>
                   </div>
@@ -92,7 +92,7 @@ if (isset($_POST['search'])) {
                       </div>
                       <div class="col-6">
                           <div class="bg-1 w-100 h-20 mt-1 py-3 text-center text-light">相關連結:<a href="' . $row["links"] . '">' . $row["links"] . '</a></div>
-                          <img src="./images/' . $row["images"] . '" class="w-100 h-75" alt="">
+                          <img src="./images/' . $row["images"] . '" class="w-100" style="height: 225px" alt="">
                       </div>
                   </div>
                 </div>';
