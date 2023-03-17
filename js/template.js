@@ -1,8 +1,8 @@
-const template1 = $("#template1");
-const template2 = $("#template2");
-const template3 = $("#template3");
-const template4 = $("#template4");
-const preview = $("#preview");
+const template1 = document.querySelector("#template1");
+const template2 = document.querySelector("#template2");
+const template3 = document.querySelector("#template3");
+const template4 = document.querySelector("#template4");
+const preview = document.querySelector("#preview");
 
 const template1HTML = `
 <div class="row pt-5 mt-5 justify-content-center">
@@ -76,34 +76,37 @@ const gettemplates = [
   { el: template3, html: template3HTML },
   { el: template4, html: template4HTML },
 ];
+
 gettemplates.forEach((gettemplate) => {
-  gettemplate.el.on("change", () => {
+  gettemplate.el.addEventListener("change", () => {
     if (gettemplate.el.checked) {
-      preview.html(gettemplate.html);
+      preview.innerHTML = gettemplate.html;
     }
   });
 });
-const form = $("form");
-const product_name = $('input[name="product_name"]');
-const product_des = $('textarea[name="product_des"]');
-const time = $('input[name="time"]');
-const images = $('input[name="images"]');
-const price = $('input[name="price"]');
-const links = $('input[name="links"]');
-const previewtab = $("#preview-tab");
+const form = document.querySelector("form");
+const product_name = document.querySelector('input[name="product_name"]');
+const product_des = document.querySelector('textarea[name="product_des"]');
+const time = document.querySelector('input[name="time"]');
+const images = document.querySelector('input[name="images"]');
+const price = document.querySelector('input[name="price"]');
+const links = document.querySelector('input[name="links"]');
+const previewtab = document.querySelector("#preview-tab");
+
 const templates = [
-  { el: template1, html: template1HTML },
-  { el: template2, html: template2HTML },
-  { el: template3, html: template3HTML },
-  { el: template4, html: template4HTML },
+  { element: template1, html: template1HTML },
+  { element: template2, html: template2HTML },
+  { element: template3, html: template3HTML },
+  { element: template4, html: template4HTML },
 ];
+
 previewtab.addEventListener("click", (e) => {
   e.preventDefault();
   const file = images.files[0];
   const reader = new FileReader();
   reader.onload = () => {
     templates.forEach((template) => {
-      if (template.el.checked) {
+      if (template.element.checked) {
         const previewHTML = template.html
           .replace("商品名稱", "商品名稱：" + product_name.value)
           .replace("商品簡介", "商品簡介:" + product_des.value)
