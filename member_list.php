@@ -129,12 +129,12 @@
           <div class="col-6">
             <form id="search-member" class="d-flex justify-content-end align-items-center">
               <div class="d-flex px-2">
-                <label for="">升冪</label>
-                <input type="radio" name="use" id="" value="up">
+                <label for="up-order">升冪</label>
+                <input type="radio" name="use" id="up-order" value="up">
               </div>
               <div class="d-flex px-2">
-                <label for="">降冪</label>
-                <input type="radio" name="use" id="" value="down">
+                <label for="down-order">降冪</label>
+                <input type="radio" name="use" id="down-order" value="down">
               </div>
               <input type="search" name="search" id="search-input" placeholder="請輸入使用者資料"
                 class="form-control w-50 mr-2">

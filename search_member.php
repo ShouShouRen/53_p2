@@ -33,7 +33,17 @@ if (isset($_POST['search'])) {
     }
     $html = "";
     foreach ($filtered_result as $row) {
-      // ...
+      $html .= '
+        <div class="col-6 h-380">
+          <div class="d-flex text-center bg-back px-2 py-3 flex-wrap">
+            <div class="col-12">
+              <div class="bg-1 w-100 h-20 mt-1 py-3 text-center text-light">
+                使用者名稱:' . $row["user_name"] . '</div>
+              <div class="bg-2 w-100 h-20 mt-1 py-3 text-center text-light">
+                使用者 ID:' . $row["user_id"] . '</div>
+            </div>
+          </div>
+        </div>';
     }
     echo $html;
   }

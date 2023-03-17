@@ -135,6 +135,7 @@ $(function () {
       },
     });
   });
+  
   $("#search-product").submit(function (event) {
     event.preventDefault();
     let search = $("#search-input").val();
