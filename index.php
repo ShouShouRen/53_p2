@@ -190,8 +190,7 @@
                 </div>
                 <div class="d-flex align-items-center justify-content-between my-3">
                   <label for="">發布日期:</label>
-                  <input type="datetime-local" class="form-control w-75" name="time" id="time"
-                    value="<?=$now?>">
+                  <input type="datetime-local" class="form-control w-75" name="time" id="time" value="<?=$now?>">
                 </div>
                 <div class="d-flex align-items-center justify-content-between my-3">
                   <label for="">當前圖片:</label>

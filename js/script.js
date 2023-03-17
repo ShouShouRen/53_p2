@@ -103,7 +103,7 @@ $(function () {
     formData.append("links", $("#links").val());
     console.log($("#images")[0]);
     formData.append("images", $("#images")[0].files[0]);
-    
+
     $.ajax({
       url: "update_product.php",
       type: "POST",
