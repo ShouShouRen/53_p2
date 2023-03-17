@@ -12,6 +12,5 @@ $links = $input["links"];
 $id = $input["id"];
 
 $sql = "UPDATE products SET product_name = ?, product_des = ?, time = ?, price = ?, links = ? WHERE id = ?";
-
-    $stmt = $pdo->prepare($sql);
-    $stmt->execute([$product_name, $product_des, $time, $price, $links, $id]);
+$stmt = $pdo->prepare($sql);
+$stmt->execute([$product_name, $product_des, $time, $price, $links, $id]);

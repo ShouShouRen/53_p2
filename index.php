@@ -194,6 +194,15 @@
                     value="<?=$now?>">
                 </div>
                 <div class="d-flex align-items-center justify-content-between my-3">
+                  <label for="">當前圖片:</label>
+                  <img id="current-image" class="w-25" src="" alt="">
+                </div>
+                <div class="d-flex align-items-center justify-content-between my-3">
+                  <label for="">圖片:</label>
+                  <input type="hidden" name="images" id="images">
+                  <input type="file" name="images" id="images">
+                </div>
+                <div class="d-flex align-items-center justify-content-between my-3">
                   <label for="">費用:</label>
                   <input type="text" class="form-control w-75" id="price" name="price">
                 </div>

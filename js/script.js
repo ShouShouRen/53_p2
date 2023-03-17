@@ -86,9 +86,12 @@ $(function () {
         $("#id").val(response[0].id);
         $("#product_name").val(response[0].product_name);
         $("#product_des").val(response[0].product_des);
-        // $("#img").attr("src", "./images/" + response[0].images);
         $("#price").val(response[0].price);
         $("#links").val(response[0].links);
+
+           // 將圖片顯示回來
+           let imagePath = "./images/" + response[0].images;
+           $("#current-image").attr("src", imagePath);
       },
     });
   });
