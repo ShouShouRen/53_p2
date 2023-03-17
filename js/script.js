@@ -111,30 +111,30 @@ $(function () {
       processData: false,
       contentType: false,
       success: function (response) {
-        console.log("Success: " + response);
+        // console.log("Success: " + response);
         // alert("儲存成功");
-        // window.location.reload();
+        window.location.reload();
       },
     });
   });
-  // $("#search-member").submit(function (e) {
-  //   e.preventDefault();
-  //   let search = $("#search-input").val();
-  //   let use = $('input[name="use"]:checked').val(); // 獲取用戶的選擇
-  //   $.ajax({
-  //     url: "search_member.php",
-  //     type: "post",
-  //     data: {
-  //       search: search,
-  //       use: use, // 將用戶的選擇發送給 PHP 程序
-  //     },
-  //     success: function (response) {
-  //       console.log(response);
-  //       $("#search_result").html(response);
-  //       $(".show-all").addClass("d-none");
-  //     },
-  //   });
-  // });
+  $("#search-member").submit(function (e) {
+    e.preventDefault();
+    let search = $("#search-input").val();
+    let use = $('input[name="use"]:checked').val(); // 獲取用戶的選擇
+    $.ajax({
+      url: "search_member.php",
+      type: "post",
+      data: {
+        search: search,
+        use: use, // 將用戶的選擇發送給 PHP 程序
+      },
+      success: function (response) {
+        console.log(response);
+        $("#search_result").html(response);
+        $(".show-all").addClass("d-none");
+      },
+    });
+  });
   $("#search-product").submit(function (event) {
     event.preventDefault();
     let search = $("#search-input").val();
