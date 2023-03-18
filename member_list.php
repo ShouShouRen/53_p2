@@ -248,7 +248,7 @@ let timer, confirmTimer;
 let counter;
 const startConfirmTimer = () => {
   confirmTimer = setTimeout(() => {
-    let count = 5;
+    let count = 4;
     counter = setInterval(() => {
       $('#countdownModal').text(count--);
       if (count < 0) {
@@ -315,8 +315,10 @@ $('#continueBtn').on('click', () => {
 $('#cancelBtn').on('click', () => {
   window.location.href = 'logout.php';
 });
-
-// setTime();
+$("#confirmModal").on("hidden.bs.modal",()=>{
+    $("#countdownModal").text(5)
+})
+setTime();
 </script>
 
 </html>
