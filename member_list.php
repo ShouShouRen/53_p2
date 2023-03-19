@@ -61,7 +61,7 @@
           <button id="resetTimeBtn" class="btn btn-sm btn-outline-light">重新計時</button>
         </div>
       </div>
-      <div class="p-4 bg-white rounded-lg shadow lg">
+      <div class="p-4 bg-white rounded-lg shadow-lg">
         <div class="row justify-content-center align-itmes-center mb-3">
           <div class="col-6">
             <button class="btn btn-sm btn-warning" data-toggle="modal" data-target="#adduser">新增使用者</button>
